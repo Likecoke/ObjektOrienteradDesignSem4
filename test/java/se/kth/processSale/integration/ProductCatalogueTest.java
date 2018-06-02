@@ -1,7 +1,10 @@
 package se.kth.processSale.integration;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-
+import static org.junit.Assert.*;
 
 public class ProductCatalogueTest {
     ProductCatalogue productCatalogue;
@@ -14,17 +17,6 @@ public class ProductCatalogueTest {
     public void tearDown() throws Exception {
         productCatalogue = null;
 
-
-    }
-
-    @Test
-    public void searchItemNotInCatalogue() throws Exception {
-        String searchString = null;
-        //String searchString = "abc1000";
-        ItemDTO foundItem = productCatalogue.searchItem(searchString);
-        boolean result = foundItem == null;
-        boolean expectedResult = true;
-        assertEquals("Inncorrect identifier returned item in catalogue", result, expectedResult);
 
     }
     @Test
@@ -41,6 +33,18 @@ public class ProductCatalogueTest {
         }
 
 
+
     }
+
+    @Test
+    public void searchItemNotInCatalogue() throws Exception {
+        String searchString = null;
+        ItemDTO foundItem = productCatalogue.searchItem(searchString);
+        boolean result = foundItem == null;
+        boolean expectedResult = true;
+        assertEquals("Incorrect identifier returned item in catalogue", result, expectedResult);
+
+    }
+
 
 }
