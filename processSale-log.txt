@@ -1,57 +1,5 @@
 ######Printout to log#########
-2018-06-03 14:29:16
-Exception thrown:  Could not find item with the given identifier: abc999
-
-se.kth.processSale.controller.OperationErrorException: Could not find item with the given identifier: abc999
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:55)
-	at se.kth.processSale.view.View.searchItemAndDisplayRunningTotal(View.java:56)
-	at se.kth.processSale.view.View.sampleExecution(View.java:39)
-	at se.kth.processSale.startup.Main.main(Main.java:30)
-Caused by: se.kth.processSale.integration.ItemNotFoundException: The item with the given identifier: abc999 was not found in the product catalogue
-	at se.kth.processSale.integration.ProductCatalogue.searchItem(ProductCatalogue.java:38)
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:50)
-	... 3 more
-######Printout to log#########
-2018-06-03 14:29:16
-Exception thrown:  The database could not be reached
-
-se.kth.processSale.controller.ServiceNotAvailableException: The database could not be reached
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:59)
-	at se.kth.processSale.view.View.searchItemAndDisplayRunningTotal(View.java:56)
-	at se.kth.processSale.view.View.sampleExecution(View.java:41)
-	at se.kth.processSale.startup.Main.main(Main.java:30)
-Caused by: se.kth.processSale.integration.DatabaseFailureException: The Database could not be reached
-	at se.kth.processSale.integration.ProductCatalogue.searchItem(ProductCatalogue.java:31)
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:50)
-	... 3 more
-######Printout to log#########
-2018-06-03 14:35:53
-Exception thrown:  Could not find item with the given identifier: abc999
-
-se.kth.processSale.controller.OperationErrorException: Could not find item with the given identifier: abc999
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:55)
-	at se.kth.processSale.view.View.searchItemAndDisplayRunningTotal(View.java:56)
-	at se.kth.processSale.view.View.sampleExecution(View.java:39)
-	at se.kth.processSale.startup.Main.main(Main.java:30)
-Caused by: se.kth.processSale.integration.ItemNotFoundException: The item with the given identifier: abc999 was not found in the product catalogue
-	at se.kth.processSale.integration.ProductCatalogue.searchItem(ProductCatalogue.java:38)
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:50)
-	... 3 more
-######Printout to log#########
-2018-06-03 14:35:53
-Exception thrown:  The database could not be reached
-
-se.kth.processSale.controller.ServiceNotAvailableException: The database could not be reached
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:59)
-	at se.kth.processSale.view.View.searchItemAndDisplayRunningTotal(View.java:56)
-	at se.kth.processSale.view.View.sampleExecution(View.java:41)
-	at se.kth.processSale.startup.Main.main(Main.java:30)
-Caused by: se.kth.processSale.integration.DatabaseFailureException: The Database could not be reached
-	at se.kth.processSale.integration.ProductCatalogue.searchItem(ProductCatalogue.java:31)
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:50)
-	... 3 more
-######Printout to log#########
-2018-06-03 17:23:08
+2018-06-03 20:27:31
 Exception thrown:  Could not find item with the given identifier: abc999
 
 se.kth.processSale.controller.OperationErrorException: Could not find item with the given identifier: abc999
@@ -64,7 +12,7 @@ Caused by: se.kth.processSale.integration.ItemNotFoundException: The item with t
 	at se.kth.processSale.controller.Controller.searchItem(Controller.java:57)
 	... 3 more
 ######Printout to log#########
-2018-06-03 17:23:08
+2018-06-03 20:27:31
 Exception thrown:  The database could not be reached
 
 se.kth.processSale.controller.ServiceNotAvailableException: The database could not be reached
@@ -77,33 +25,7 @@ Caused by: se.kth.processSale.integration.DatabaseFailureException: The Database
 	at se.kth.processSale.controller.Controller.searchItem(Controller.java:57)
 	... 3 more
 ######Printout to log#########
-2018-06-03 17:23:39
-Exception thrown:  Could not find item with the given identifier: abc999
-
-se.kth.processSale.controller.OperationErrorException: Could not find item with the given identifier: abc999
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:62)
-	at se.kth.processSale.view.View.searchItemAndDisplayRunningTotal(View.java:59)
-	at se.kth.processSale.view.View.sampleExecution(View.java:42)
-	at se.kth.processSale.startup.Main.main(Main.java:30)
-Caused by: se.kth.processSale.integration.ItemNotFoundException: The item with the given identifier: abc999 was not found in the product catalogue
-	at se.kth.processSale.integration.ProductCatalogue.searchItem(ProductCatalogue.java:38)
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:57)
-	... 3 more
-######Printout to log#########
-2018-06-03 17:23:39
-Exception thrown:  The database could not be reached
-
-se.kth.processSale.controller.ServiceNotAvailableException: The database could not be reached
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:66)
-	at se.kth.processSale.view.View.searchItemAndDisplayRunningTotal(View.java:59)
-	at se.kth.processSale.view.View.sampleExecution(View.java:44)
-	at se.kth.processSale.startup.Main.main(Main.java:30)
-Caused by: se.kth.processSale.integration.DatabaseFailureException: The Database could not be reached
-	at se.kth.processSale.integration.ProductCatalogue.searchItem(ProductCatalogue.java:31)
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:57)
-	... 3 more
-######Printout to log#########
-2018-06-03 17:23:39
+2018-06-03 20:27:31
 Exception thrown:  Could not find item with the given identifier: abc999
 
 se.kth.processSale.controller.OperationErrorException: Could not find item with the given identifier: abc999
@@ -116,7 +38,7 @@ Caused by: se.kth.processSale.integration.ItemNotFoundException: The item with t
 	at se.kth.processSale.controller.Controller.searchItem(Controller.java:57)
 	... 3 more
 ######Printout to log#########
-2018-06-03 17:23:39
+2018-06-03 20:27:31
 Exception thrown:  The database could not be reached
 
 se.kth.processSale.controller.ServiceNotAvailableException: The database could not be reached
@@ -124,32 +46,6 @@ se.kth.processSale.controller.ServiceNotAvailableException: The database could n
 	at se.kth.processSale.view.View.searchItemAndDisplayRunningTotal(View.java:59)
 	at se.kth.processSale.view.View.sampleExecution(View.java:44)
 	at se.kth.processSale.startup.Main.main(Main.java:31)
-Caused by: se.kth.processSale.integration.DatabaseFailureException: The Database could not be reached
-	at se.kth.processSale.integration.ProductCatalogue.searchItem(ProductCatalogue.java:31)
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:57)
-	... 3 more
-######Printout to log#########
-2018-06-03 17:23:39
-Exception thrown:  Could not find item with the given identifier: abc999
-
-se.kth.processSale.controller.OperationErrorException: Could not find item with the given identifier: abc999
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:62)
-	at se.kth.processSale.view.View.searchItemAndDisplayRunningTotal(View.java:59)
-	at se.kth.processSale.view.View.sampleExecution(View.java:42)
-	at se.kth.processSale.startup.Main.main(Main.java:32)
-Caused by: se.kth.processSale.integration.ItemNotFoundException: The item with the given identifier: abc999 was not found in the product catalogue
-	at se.kth.processSale.integration.ProductCatalogue.searchItem(ProductCatalogue.java:38)
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:57)
-	... 3 more
-######Printout to log#########
-2018-06-03 17:23:39
-Exception thrown:  The database could not be reached
-
-se.kth.processSale.controller.ServiceNotAvailableException: The database could not be reached
-	at se.kth.processSale.controller.Controller.searchItem(Controller.java:66)
-	at se.kth.processSale.view.View.searchItemAndDisplayRunningTotal(View.java:59)
-	at se.kth.processSale.view.View.sampleExecution(View.java:44)
-	at se.kth.processSale.startup.Main.main(Main.java:32)
 Caused by: se.kth.processSale.integration.DatabaseFailureException: The Database could not be reached
 	at se.kth.processSale.integration.ProductCatalogue.searchItem(ProductCatalogue.java:31)
 	at se.kth.processSale.controller.Controller.searchItem(Controller.java:57)

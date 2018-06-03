@@ -29,7 +29,6 @@ public class Main {
         View view = new View(controller);
         view.sampleExecution();
         view.sampleExecution();
-        view.sampleExecution();
 
 
     }
