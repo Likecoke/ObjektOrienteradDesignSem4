@@ -5,7 +5,8 @@ public class ChangeDTO {
     private final double change;
 
     /** initialize the object with the given change amount
-     * @param change The amount of change that this object represents  */
+     * @param change The amount of change that this object represents
+     * @param amountPayed The amount payed by the customer */
     public ChangeDTO(double change, double amountPayed){
         this.change = change;
         this.amountPayed = amountPayed;

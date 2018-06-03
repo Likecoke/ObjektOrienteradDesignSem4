@@ -82,8 +82,8 @@ public class ControllerTest {
         controller.searchItem("abc1002");
         TaxTotalDTO taxAndTotal = controller.allItemsRegistered();
         double paymentAmount = 200;
-        ChangeCalculator comparsionChangeCalculator = new ChangeCalculator(paymentAmount, taxAndTotal);
-        ChangeDTO comparisonChange = comparsionChangeCalculator.getChange();
+        ChangeCalculator comparsionChangeCalculator = new ChangeCalculator();
+        ChangeDTO comparisonChange = comparsionChangeCalculator.calculateChange(paymentAmount, taxAndTotal);
         ChangeDTO changeReturnedFromController = controller.enterPayment(paymentAmount);
         boolean result = comparisonChange.getChange() == changeReturnedFromController.getChange();
         boolean expectedResult = true;

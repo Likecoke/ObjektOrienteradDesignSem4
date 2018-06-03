@@ -7,7 +7,10 @@ public class SaleDTO {
     private double runningTotal;
     private Node<ItemDTO> itemList;
 
-    /** Create an instance to represent the runningTotal and items of a sale */
+    /** Create an instance to represent the runningTotal and items of a sale
+     * @param runningTotal The running total of the sale
+     * @param  itemList The items sold during the sale
+     * */
     public SaleDTO(double runningTotal, Node<ItemDTO> itemList){
         this.runningTotal = runningTotal;
         this.itemList = itemList;

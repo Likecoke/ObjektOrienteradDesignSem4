@@ -3,6 +3,9 @@ package se.kth.processSale.controller;
 import se.kth.processSale.integration.*;
 import se.kth.processSale.model.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * The controller class of the application
  */
@@ -15,6 +18,10 @@ public class Controller {
     private Printer printer;
     private Sale currentSale;
     private Receipt receipt;
+    private List<IncomeObserver> incomeObservers =
+             new ArrayList<>();
+
+
 
     /**
      * Create a new instance of the Controller
@@ -45,15 +52,22 @@ public class Controller {
      * @param identifier String that uniquely identifies the item
      * @return Information about the sale so far
      */
-    public SaleDTO searchItem(String identifier){
-        ItemDTO item = productCatalogue.searchItem(identifier);
-        if(item == null){
-            return currentSale.saleStatus();
-        }
-        else {
+    public SaleDTO searchItem(String identifier) throws OperationErrorException, ServiceNotAvailableException{
+        try{
+            ItemDTO item = productCatalogue.searchItem(identifier);
             currentSale.addItem(item);
             return currentSale.saleStatus();
+        } catch (ItemNotFoundException exception){
+
+            throw new OperationErrorException("Could not find item with the given identifier: " +identifier, exception);
+
+        } catch (DatabaseFailureException exc){
+
+            throw new ServiceNotAvailableException("The database could not be reached", exc);
+
         }
+
+
 
     }
 
@@ -75,14 +89,19 @@ public class Controller {
      * @return Information about the change given to the customer
      */
     public ChangeDTO enterPayment( double payedAmount){
-        changeCalc = new ChangeCalculator(payedAmount, totalWithTax.getTotalWithTax());
-        ChangeDTO change = changeCalc.getChange();
+        changeCalc = new ChangeCalculator();
+        changeCalc.addObservers(this.incomeObservers);
+        ChangeDTO change = changeCalc.calculateChange(payedAmount, totalWithTax.getTotalWithTax());
         SaleInformationDTO saleInformationDTO = new SaleInformationDTO(currentSale.saleStatus(), totalWithTax.getTotalWithTax(), change);
         invSystem.sendSaleInformation(saleInformationDTO);
         accountingSystem.sendSaleInformation(saleInformationDTO);
         receipt = new Receipt(saleInformationDTO, this.printer);
         receipt.sendReceipt();
         return change;
+    }
+
+    public void addIncomeObserver(IncomeObserver obs){
+        incomeObservers.add(obs);
     }
 
 

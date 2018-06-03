@@ -7,7 +7,9 @@ public class Node<T> {
 
     /** Copy a list creating a new copy of it.
      * @param list the list that is to be copied
-     * @return  Reference to the first <Code>Node<T></Code> in the copy */
+     * @param <E> The type of the Node
+     * @return  Reference to the first Node in the copy
+     */
     public static <E> Node<E> copyList(Node<E> list){
         if(list == null){
             return null;

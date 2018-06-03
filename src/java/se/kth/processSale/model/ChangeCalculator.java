@@ -1,21 +1,50 @@
 package se.kth.processSale.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /** This class is responsible for calculating the change and storing it */
 public class ChangeCalculator {
-    private ChangeDTO change;
-    /** This constructor creates an instance of ChangeCalculator, storing the change calculated from
-     * the given parameters
-     * @param  payedAmount How much the customer payed
-     * @param  totalWithTaxApplied The total after taxes have been applied
+
+    private List<IncomeObserver> incomeObservers =
+            new ArrayList<>();
+    /** This constructor creates an instance of ChangeCalculator
      */
-    public ChangeCalculator(double payedAmount, TaxTotalDTO totalWithTaxApplied){
-        double calculatedChange = payedAmount - totalWithTaxApplied.getTotalWithTaxApplied();
-        change = new ChangeDTO(calculatedChange, payedAmount);
+    public ChangeCalculator(){
 
     }
-    /** This method returns the stored change
-     * @return The {@link ChangeDTO} object stored in the current instance
-     * */
-    public ChangeDTO getChange() {
-        return this.change;
+    /**
+     *
+     */
+    private void notifyIncomeObservers(double payedAmount, double change){
+        double payment = payedAmount-change;
+        for (IncomeObserver obs: this.incomeObservers){
+            obs.paymentDone(payment);
+
+        }
+
     }
+    /**
+     *
+     */
+    public void addObservers(List<IncomeObserver> observers){
+        for (IncomeObserver obs: observers){
+            incomeObservers.add(obs);
+        }
+    }
+
+
+    /** This method calculates and returns the change
+     *  @param  payedAmount How much the customer payed
+     * @param  totalWithTaxApplied The total after taxes have been applied
+     * @return The calculated change stored in a {@link ChangeDTO} object
+     * */
+    public ChangeDTO calculateChange(double payedAmount, TaxTotalDTO totalWithTaxApplied){
+        double change = payedAmount - totalWithTaxApplied.getTotalWithTaxApplied();
+        notifyIncomeObservers(payedAmount, change);
+        return new ChangeDTO(change, payedAmount);
+
+    }
+
+
 }

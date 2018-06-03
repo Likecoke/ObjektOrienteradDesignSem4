@@ -30,8 +30,8 @@ public class ReceiptTest {
         sale.addItem(firstItem);
         taxTotalCalc = new CalculateTotalWithTax(sale.saleStatus());
         payedAmount = new Double(200);
-        changeCalc = new ChangeCalculator(payedAmount, taxTotalCalc.getTotalWithTax());
-        saleInformation = new SaleInformationDTO(sale.saleStatus(), taxTotalCalc.getTotalWithTax(), changeCalc.getChange());
+        changeCalc = new ChangeCalculator();
+        saleInformation = new SaleInformationDTO(sale.saleStatus(), taxTotalCalc.getTotalWithTax(), changeCalc.calculateChange(payedAmount, taxTotalCalc.getTotalWithTax()));
         printer = new Printer();
         receipt = new Receipt(saleInformation, printer);
     }
@@ -59,7 +59,7 @@ public class ReceiptTest {
         receipt.sendReceipt();
         String printedReceipt = capturedPrintedReceipt.toString();
         TaxTotalDTO taxTotal = taxTotalCalc.getTotalWithTax();
-        ChangeDTO change = changeCalc.getChange();
+        ChangeDTO change = changeCalc.calculateChange(payedAmount, taxTotalCalc.getTotalWithTax());
         double totalWithTaxes = taxTotal.getTotalWithTaxApplied();
         double totalWithoutTaxes = taxTotal.getTotalWithoutTaxes();
         String expectedResult = "Receipt\n"+"Items: \n"+

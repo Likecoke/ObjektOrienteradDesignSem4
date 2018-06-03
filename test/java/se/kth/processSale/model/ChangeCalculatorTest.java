@@ -18,7 +18,7 @@ public class ChangeCalculatorTest {
     @Before
     public void setUp() throws Exception {
         taxAndTotal = new TaxTotalDTO(runningTotalWithoutTax, runningTotalWithTax);
-        changeCalculator = new ChangeCalculator(payedAmount, taxAndTotal);
+        changeCalculator = new ChangeCalculator();
     }
 
     @After
@@ -29,7 +29,7 @@ public class ChangeCalculatorTest {
 
     @Test
     public void changeCalculatedCorrectly() throws Exception {
-       boolean result =  changeCalculator.getChange().getChange() == payedAmount - runningTotalWithTax;
+       boolean result =  changeCalculator.calculateChange(payedAmount, taxAndTotal).getChange() == payedAmount - runningTotalWithTax;
        boolean expectedResult = true;
        assertEquals("Change wasn't correctly calculated", result, expectedResult);
     }

@@ -47,7 +47,7 @@ public class SaleTest {
     }
     @Test
     public void ItemAddedToSale(){
-        ItemDTO itemToBeAdded = new ItemDTO("abc",200, "mjölk");
+        ItemDTO itemToBeAdded = new ItemDTO("abc",200, "mjolk");
         newSale.addItem(itemToBeAdded);
 
         Node<ItemDTO> saleList = newSale.saleStatus().getItemList();
@@ -58,7 +58,7 @@ public class SaleTest {
     }
     @Test
     public void saleStatusReturnsCorrectRunningTotal(){
-        ItemDTO firstItem = new ItemDTO("abc",120, "mjölk");
+        ItemDTO firstItem = new ItemDTO("abc",120, "mjolk");
         ItemDTO secondItem = new ItemDTO("abcd",240, "kakor");
         newSale.addItem(firstItem);
         newSale.addItem(secondItem);
@@ -70,7 +70,7 @@ public class SaleTest {
     }
     @Test
     public void saleStatusReturnsCorrectItemList(){
-        ItemDTO firstItem = new ItemDTO("abc",120, "mjölk");
+        ItemDTO firstItem = new ItemDTO("abc",120, "mjolk");
         ItemDTO secondItem = new ItemDTO("abcd",240, "kakor");
         newSale.addItem(firstItem);
         newSale.addItem(secondItem);

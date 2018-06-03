@@ -27,7 +27,7 @@ public class SaleDTOTest {
 
     @Test
     public void  getLatestItemAddedReturnsLatestItemAdded(){
-        ItemDTO firstItem = new ItemDTO("abc",200, "mjölk");
+        ItemDTO firstItem = new ItemDTO("abc",200, "mjolk");
         ItemDTO secondItem = new ItemDTO("abcd",200, "kakor");
         newSale.addItem(firstItem);
         newSale.addItem(secondItem);

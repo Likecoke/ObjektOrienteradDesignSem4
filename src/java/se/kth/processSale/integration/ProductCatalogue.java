@@ -25,15 +25,17 @@ public class ProductCatalogue {
      * @param identifier String that identifies the item
      * @return The searched for item or null if it wasn't found
      */
-    public ItemDTO searchItem(String identifier){
+    public ItemDTO searchItem(String identifier) throws ItemNotFoundException, DatabaseFailureException{
+        if(identifier.equals("abc1003")){
 
+            throw new DatabaseFailureException("The Database could not be reached");
+        }
         for(int i = 0; i<items.length; i++){
             if(items[i].getIdentifier().equals(identifier)){
                 return items[i];
             }
         }
-
-        return null;
+        throw new ItemNotFoundException("The item with the given identifier: "+identifier+" was not found in the product catalogue");
 
     }
 
