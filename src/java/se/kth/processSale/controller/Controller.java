@@ -50,6 +50,8 @@ public class Controller {
     /**
      * Search for an item with the given identifier
      * @param identifier String that uniquely identifies the item
+     * @throws OperationErrorException Exception that's thrown to indicate an error with the operation.
+     * @throws ServiceNotAvailableException Exception that's thrown to indicate that an external entity servicing the program wasn't available.
      * @return Information about the sale so far
      */
     public SaleDTO searchItem(String identifier) throws OperationErrorException, ServiceNotAvailableException{
@@ -100,6 +102,10 @@ public class Controller {
         return change;
     }
 
+    /**
+     * Adds an observer to the list of observers maintained by the Controller
+     * @param obs The observer to be added
+     */
     public void addIncomeObserver(IncomeObserver obs){
         incomeObservers.add(obs);
     }

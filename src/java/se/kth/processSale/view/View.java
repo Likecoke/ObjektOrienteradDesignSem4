@@ -22,7 +22,7 @@ public class View {
     TotalRevenueView totalRevenueView;
     /** Create an instance of the view
      * @param controller reference to the applications controller
-     * */
+     * @throws IOException The ErrorLogger couldn't be generated successfully  */
     public View(Controller controller) throws IOException{
         this.controller = controller;
         this.errorLogger = new ErrorLogger(new CurrentTimeGenerator());

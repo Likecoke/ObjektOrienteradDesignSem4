@@ -23,7 +23,10 @@ public class ProductCatalogue {
     /**
      * Search for an item with the given identifier
      * @param identifier String that identifies the item
+     * @throws ItemNotFoundException Exception thrown when the item couldn't be found
+     * @throws DatabaseFailureException There was an error with the database.
      * @return The searched for item or null if it wasn't found
+     *
      */
     public ItemDTO searchItem(String identifier) throws ItemNotFoundException, DatabaseFailureException{
         if(identifier.equals("abc1003")){

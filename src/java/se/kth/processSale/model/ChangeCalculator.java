@@ -13,8 +13,9 @@ public class ChangeCalculator {
     public ChangeCalculator(){
 
     }
-    /**
-     *
+    /** Notifies missing observers
+     * @param payedAmount the amount paid by the customer
+     * @param change the change given to the customer
      */
     private void notifyIncomeObservers(double payedAmount, double change){
         double payment = payedAmount-change;
@@ -24,8 +25,8 @@ public class ChangeCalculator {
         }
 
     }
-    /**
-     *
+    /** Adds a list of observers that should be notified by the ChangeCalculator
+     *@param observers The observers that should be added
      */
     public void addObservers(List<IncomeObserver> observers){
         for (IncomeObserver obs: observers){
@@ -35,7 +36,7 @@ public class ChangeCalculator {
 
 
     /** This method calculates and returns the change
-     *  @param  payedAmount How much the customer payed
+     * @param  payedAmount How much the customer payed
      * @param  totalWithTaxApplied The total after taxes have been applied
      * @return The calculated change stored in a {@link ChangeDTO} object
      * */
